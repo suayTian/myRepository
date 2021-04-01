@@ -4,6 +4,12 @@ server:
 spring:
   application:
     name: springcloud-tian-consumer
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
 logging:
   level:
     com:
