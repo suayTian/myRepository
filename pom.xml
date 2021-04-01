@@ -19,7 +19,7 @@
         <spring.cloud.verson>Hoxton.SR6</spring.cloud.verson>
         <spring.boot.verson>2.3.1.RELEASE</spring.boot.verson>
         <lombok.verson>1.18.18</lombok.verson>
-        <junit.verson>4.13</junit.verson>
+        <junit.verson>4.13.1</junit.verson>
         <mysql.connector.verson>8.0.20</mysql.connector.verson>
         <druid.verson>1.0.9</druid.verson>
         <mybatis.spring.verson>2.1.4</mybatis.spring.verson>
