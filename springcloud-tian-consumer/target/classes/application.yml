@@ -1,0 +1,11 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: springcloud-tian-consumer
+logging:
+  level:
+    com:
+      tian:
+        springcloud: debug

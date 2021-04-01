@@ -10,6 +10,8 @@
     <modules>
         <module>springcloud-tian-api</module>
         <module>springcloud-tian-provider</module>
+        <module>springcloud-tian-consumer</module>
+        <module>springcloud-tian-eureka-server</module>
     </modules>
     <packaging>pom</packaging>
 
