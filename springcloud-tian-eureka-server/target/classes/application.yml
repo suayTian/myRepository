@@ -7,9 +7,20 @@ spring:
 eureka:
   instance:
     hostname: eureka7001 #配置了host映射
+    #如果register-with-eureka为false 则服务每分钟向注册中心续订的最大阈值计算公式为2*(n+1)*计算因子 默认0.85
+    #如果register-with-eureka为true  则服务每分钟向注册中心续订的最大阈值计算公式为2*n*计算因子 n为服务个数
+    #服务向注册中心续订的周期时间设置 默认是30s 则每个服务向注册中心续订的次数为每分钟2次
+    #if 服务个数*最近一分钟续订次数 <= 最大阈值 自我保护机制将被激活
+    #比如 2*60/30 = 4 < 2*(2+1)*0.85 = 5.1 ≈ 5 得出结论 4<5 自我保护机制激活
+    lease-renewal-interval-in-seconds: 30
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
       defaultZone: http://eureka7002:7002/eureka/,http://eureka7003:7003/eureka/
+  server:
+    #阈值计算因子 默认0.85
+    renewal-percent-threshold: 0.85
+    #自我保护机制 默认开启
+    enable-self-preservation: true
 
