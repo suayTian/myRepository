@@ -11,13 +11,13 @@ import java.util.List;
 @RestController
 public class UserConsumerController {
 
-    private static final String url = "http://localhost:8001/getList";
+    private static final String url = "http://SPRINGCLOUD-TIAN-PROVIDER";
 
     @Autowired
     private RestTemplate restTemplate;
 
     @GetMapping("/getList")
     public List<User> getList() {
-        return restTemplate.getForObject(url, List.class);
+        return restTemplate.getForObject(url+"/getList", List.class);
     }
 }
