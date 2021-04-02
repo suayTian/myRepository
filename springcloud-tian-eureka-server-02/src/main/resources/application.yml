@@ -1,0 +1,15 @@
+server:
+  port: 7002
+
+spring:
+  application:
+    name: springcloud-tian-eureka-server-02
+eureka:
+  instance:
+    hostname: eureka7002 #配置了host映射
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka7001:7001/eureka/,http://eureka7003:7003/eureka/
+
