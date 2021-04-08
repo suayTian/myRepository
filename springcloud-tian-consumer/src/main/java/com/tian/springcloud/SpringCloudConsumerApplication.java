@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableEurekaClient
-@EnableFeignClients(basePackages = "com.tian.springcloud.client")
+@EnableFeignClients
 public class SpringCloudConsumerApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringCloudConsumerApplication.class, args);

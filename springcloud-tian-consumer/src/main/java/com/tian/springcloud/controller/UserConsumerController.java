@@ -14,8 +14,8 @@ public class UserConsumerController {
 
     private static final String url = "http://SPRINGCLOUD-TIAN-PROVIDER";
 
-    @Autowired
-    private RestTemplate restTemplate;
+    /*@Autowired
+    private RestTemplate restTemplate;*/
     @Autowired
     private UserClient userClient;
 
