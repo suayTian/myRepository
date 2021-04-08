@@ -23,7 +23,5 @@ eureka:
 logging:
   level:
     com:
-      tina:
+      tian:
         springcloud: debug
-    org:
-      mybatis: debug
