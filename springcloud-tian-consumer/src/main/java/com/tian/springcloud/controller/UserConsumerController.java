@@ -4,8 +4,8 @@ import com.tian.springcloud.client.UserClient;
 import com.tian.springcloud.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -27,5 +27,11 @@ public class UserConsumerController {
     @GetMapping("/getList")
     public List<User> getList() {
         return userClient.getList();
+    }
+
+    @GetMapping("/getById/{id}")
+    public User getById(@PathVariable("id") String id) throws Exception {
+        User user = userClient.getById(id);
+        return user;
     }
 }
