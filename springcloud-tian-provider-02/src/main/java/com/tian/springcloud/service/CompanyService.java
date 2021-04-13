@@ -1,15 +1,16 @@
 package com.tian.springcloud.service;
 
 import com.tian.springcloud.pojo.Company;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.extension.service.IService;
 
-import java.util.List;
+/**
+ * <p>
+ *  服务类
+ * </p>
+ *
+ * @author TianShuai
+ * @since 2021-04-13
+ */
+public interface CompanyService extends IService<Company> {
 
-public interface CompanyService {
-
-    Long insert(Company company);
-
-    List<Company> getList();
-
-    Company selectById(@Param("id") String id);
 }

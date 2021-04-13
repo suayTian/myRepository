@@ -1,8 +1,7 @@
 #spring boot
-/target/
-/Scratches/
+target
 
 #IDEA
 /.idea
-/.iml
+*.iml
 *.log
