@@ -1,14 +1,15 @@
 package com.tian.springcloud.serviceImpl;
 
-import com.tian.springcloud.pojo.Company;
-import com.tian.springcloud.mapper.CompanyMapper;
-import com.tian.springcloud.service.CompanyService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.tian.springcloud.mapper.CompanyMapper;
+import com.tian.springcloud.pojo.Company;
+import com.tian.springcloud.service.CompanyService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author TianShuai
@@ -17,4 +18,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class CompanyServiceImpl extends ServiceImpl<CompanyMapper, Company> implements CompanyService {
 
+    @Autowired
+    private CompanyMapper companyMapper;
+
+    @Override
+    public Company getById(String id) {
+        return companyMapper.selectById(id);
+    }
 }

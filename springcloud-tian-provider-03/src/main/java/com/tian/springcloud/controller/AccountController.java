@@ -3,10 +3,7 @@ package com.tian.springcloud.controller;
 import com.tian.springcloud.pojo.Account;
 import com.tian.springcloud.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +22,10 @@ public class AccountController {
     @GetMapping("/getList")
     public List<Account> getList() {
         return accountService.getList();
+    }
+
+    @GetMapping("/getById/{id}")
+    public Account getById(@PathVariable("id") String id) {
+        return accountService.selectById(id);
     }
 }

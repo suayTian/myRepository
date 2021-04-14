@@ -1,8 +1,6 @@
 package com.tian.springcloud.pojo;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
@@ -10,6 +8,8 @@ import java.io.Serializable;
 @Data
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Accessors(chain = true)
 public class User implements Serializable {
 
