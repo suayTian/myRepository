@@ -8,7 +8,7 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 
 @SpringBootApplication
 @EnableEurekaClient
-@EnableCircuitBreaker
+@EnableCircuitBreaker //开启服务熔断 不用@enableHystrix 否则会报
 public class SpringCloudProviderApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringCloudProviderApplication.class, args);

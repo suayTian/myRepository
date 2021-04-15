@@ -1,5 +1,6 @@
 package com.tian.springcloud.client;
 
+import com.tian.springcloud.fallback.ConsumerClientFallBackFactory;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(value = "SPRINGCLOUD-TIAN-PROVIDER")
+@FeignClient(value = "SPRINGCLOUD-TIAN-PROVIDER", fallbackFactory = ConsumerClientFallBackFactory.class)
 public interface ConsumerClient {
 
     @GetMapping("/getList")

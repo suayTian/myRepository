@@ -26,7 +26,7 @@ public class UserController {
     }
 
     @GetMapping("/getById/{id}")
-    @HystrixCommand(fallbackMethod = "hystrixUser")
+    @HystrixCommand(fallbackMethod = "hystrixUser") //服务熔断
     public User getById(@PathVariable("id") String id) throws Exception {
         User user = userService.selectById(id);
         if (user == null) {
