@@ -23,4 +23,8 @@ public class Result<T> {
         return new Result(200, "请求成功", data);
     }
 
+    public static Result failed(Integer code, String message, Object data) {
+        return new Result(code, message, data);
+    }
+
 }
