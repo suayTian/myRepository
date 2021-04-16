@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springcloud-tian-consumer" />
         <module name="springcloud-tian-api" />
+        <module name="springcloud-tian-hystrix-dashboard" />
         <module name="springcloud-tian-provider-03" />
         <module name="springcloud-tian-provider-02" />
         <module name="springcloud-tian-eureka-server" />

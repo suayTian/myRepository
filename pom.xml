@@ -16,6 +16,7 @@
         <module>springcloud-tian-eureka-server-03</module>
         <module>springcloud-tian-provider-02</module>
         <module>springcloud-tian-provider-03</module>
+        <module>springcloud-tian-hystrix-dashboard</module>
     </modules>
     <packaging>pom</packaging>
 
