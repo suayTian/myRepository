@@ -22,6 +22,12 @@ spring:
           filters: #过滤器
             #- RewritePath=/user(?<segment>/?.*), $\{segment}
             - StripPrefix=1 #截取路径前面一位
+              ## 熔断
+            - name: Hystrix
+            args:
+              name: fallbackcmd
+              ### fallback 时调用的方法 http://localhost:9002/fallback
+              fallbackUri: forward:/fallback
 
 management: #暴露健康检查web接口
   endpoints:
