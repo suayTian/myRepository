@@ -1,6 +1,7 @@
 package com.tian.springcloud.fallback;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.tian.springcloud.client.ConsumerClient;
 import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;
@@ -20,12 +21,13 @@ public class ConsumerClientFallBackFactory implements FallbackFactory {
 
             @Override
             public Map<String, Object> getById(String id) {
+                Map<String, Object> map = Maps.newHashMap();
                 try {
                     throw new BusinessException("this is consumer client server hystrix ~");
                 } catch (BusinessException e) {
-                    e.printStackTrace();
+                    map.put("name", "this is consumer client server hystrix ~");
                 }
-                return null;
+                return map;
             }
         };
     }

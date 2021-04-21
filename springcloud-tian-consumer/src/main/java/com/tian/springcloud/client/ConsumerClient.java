@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(value = "SPRINGCLOUD-TIAN-PROVIDER", fallbackFactory = ConsumerClientFallBackFactory.class)
+//@FeignClient(value = "SPRINGCLOUD-TIAN-PROVIDER", fallbackFactory = ConsumerClientFallBackFactory.class)
+@FeignClient(value = "GATEWAY", path = "SPRINGCLOUD-TIAN-PROVIDER", fallbackFactory = ConsumerClientFallBackFactory.class)
 public interface ConsumerClient {
 
     @GetMapping("/getList")

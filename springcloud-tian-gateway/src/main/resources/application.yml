@@ -9,7 +9,7 @@ spring:
       discovery:
         locator: #是否和服务注册与发现组件结合，设置为 true 后可以直接使用应用名称调用服务
           enabled: true
-          lower-case-service-id: true
+          #lower-case-service-id: true
         #circuitbreaker: #断路器开关
         #hystrix:
         #enabled: true
@@ -23,11 +23,11 @@ spring:
             #- RewritePath=/user(?<segment>/?.*), $\{segment}
             - StripPrefix=1 #截取路径前面一位
               ## 熔断
-            - name: Hystrix
-            args:
-              name: fallbackcmd
-              ### fallback 时调用的方法 http://localhost:9002/fallback
-              fallbackUri: forward:/fallback
+            #- name: Hystrix
+              #args:
+                #name: fallbackcmd
+                ### fallback 时调用的方法 http://localhost:9002/fallback
+                #fallbackUri: forward:/fallback
 
 management: #暴露健康检查web接口
   endpoints:

@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: consumer-server
+      #label: master
+      uri: http://localhost:9003
+      #profile: dev

@@ -18,6 +18,7 @@
         <module>springcloud-tian-provider-03</module>
         <module>springcloud-tian-hystrix-dashboard</module>
         <module>springcloud-tian-gateway</module>
+        <module>springcloud-tian-config</module>
     </modules>
     <packaging>pom</packaging>
 

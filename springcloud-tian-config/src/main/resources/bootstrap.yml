@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    config:
+      name: config-server #config配置的名称
+      profile: dev #获取远程配置时使用的默认配置文件 逗号分隔
+      server:
+        git:
+          #uri: https://github.com/suayTian/springcloud-tian-config.git
+          uri: file:///E://projects//springcloud-tian-config
+          repos:  #多仓库配置
+            local:
+              pattern: config* #如果匹配到配置文件名称 就从本地仓库加载配置文件
+              uri: file:///E://projects//springcloud-tian-config
+        bootstrap: true #指示配置服务器应该使用来自远程存储库的属性初始化自己的环境
