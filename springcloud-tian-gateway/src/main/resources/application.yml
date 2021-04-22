@@ -23,17 +23,20 @@ spring:
             #- RewritePath=/user(?<segment>/?.*), $\{segment}
             - StripPrefix=1 #截取路径前面一位
               ## 熔断
-            #- name: Hystrix
+              #- name: Hystrix
               #args:
-                #name: fallbackcmd
-                ### fallback 时调用的方法 http://localhost:9002/fallback
-                #fallbackUri: forward:/fallback
+              #name: fallbackcmd
+              ### fallback 时调用的方法 http://localhost:9002/fallback
+            #fallbackUri: forward:/fallback
 
 management: #暴露健康检查web接口
   endpoints:
     web:
       exposure:
         include: "*"
+  endpoint:
+    health:
+      show-details: always
 eureka:
   instance:
     prefer-ip-address: true

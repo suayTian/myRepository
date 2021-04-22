@@ -3,12 +3,20 @@ server:
 
 spring:
   application:
-    name: springcloud-tian-eureka-server-03
+    name: springcloud-tian-eureka
 eureka:
   instance:
     hostname: eureka7003 #配置了host映射
   client:
-    register-with-eureka: false
+    register-with-eureka: true
     fetch-registry: false
     service-url:
       defaultZone: http://eureka7001:7001/eureka/,http://eureka7002:7002/eureka/
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"

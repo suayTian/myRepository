@@ -4,6 +4,15 @@ spring:
   application:
     name: springcloud-tian-provider
 
+management: #暴露健康检查web接口
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
 logging:
   level:
     com:

@@ -19,6 +19,7 @@
         <module>springcloud-tian-hystrix-dashboard</module>
         <module>springcloud-tian-gateway</module>
         <module>springcloud-tian-config</module>
+        <module>springcloud-tian-admin</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -34,6 +35,7 @@
         <mybatis.spring.verson>2.1.4</mybatis.spring.verson>
         <fastjson.verson>1.2.72</fastjson.verson>
         <logback.verson>1.2.3</logback.verson>
+        <spring.admin.verson>2.2.3</spring.admin.verson>
     </properties>
 
     <dependencyManagement>
@@ -51,6 +53,16 @@
                 <version>${spring.boot.verson}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring.admin.verson}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>${spring.admin.verson}</version>
             </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>

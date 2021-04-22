@@ -20,6 +20,15 @@ eureka:
   instance:
     prefer-ip-address: true
 
+management: #暴露健康检查web接口
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
 logging:
   level:
     com:
