@@ -10,7 +10,6 @@
         <module name="springcloud-tian-consumer" />
         <module name="springcloud-tian-api" />
         <module name="springcloud-tian-config" />
-        <module name="springcloud-tian-hystrix-dashboard" />
         <module name="springcloud-tian-provider-03" />
         <module name="springcloud-tian-provider-02" />
         <module name="springcloud-tian-admin" />
@@ -21,5 +20,8 @@
         <module name="springcloud-tian-eureka-server-03" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springcloud-tian-hystrix-dashboard" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

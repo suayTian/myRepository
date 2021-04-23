@@ -8,3 +8,5 @@ spring:
       #discovery: #要启用discover eureka配置需要在本地 spring cloud启动时会先初始化spring cloud组件
         #enabled: true
         #service-id: config-server
+      username: admin
+      password: 123456

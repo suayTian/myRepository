@@ -8,8 +8,6 @@ eureka:
   instance:
     hostname: eureka7003 #配置了host映射
   client:
-    register-with-eureka: true
-    fetch-registry: false
     service-url:
       defaultZone: http://eureka7001:7001/eureka/,http://eureka7002:7002/eureka/
 management:

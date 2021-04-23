@@ -5,3 +5,5 @@ spring:
       #label: master
       uri: http://localhost:9003
       #profile: dev
+      username: admin
+      password: 123456

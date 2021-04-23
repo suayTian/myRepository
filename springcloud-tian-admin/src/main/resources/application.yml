@@ -4,15 +4,19 @@ server:
 spring:
   application:
     name: admin
-  #mail: #spring boot admin异常邮件通知
-    #host: smtp.163.com
-    #username:
-    #password:
-  #boot:
-    #admin:
+      #mail: #spring boot admin异常邮件通知
+      #host: smtp.163.com
+      #username:
+      #password:
+      #boot:
+      #admin:
       #notify:
-        #mail:
-          #to:
+      #mail:
+    #to:
+  security:
+    user:
+      name: admin
+      password: admin
 
 eureka:
   instance:

@@ -14,8 +14,6 @@ eureka:
     #比如 2*60/30 = 4 < 2*(2+1)*0.85 = 5.1 ≈ 5 得出结论 4<5 自我保护机制激活
     lease-renewal-interval-in-seconds: 30
   client:
-    register-with-eureka: true
-    fetch-registry: false
     service-url:
       defaultZone: http://eureka7002:7002/eureka/,http://eureka7003:7003/eureka/
   server:
