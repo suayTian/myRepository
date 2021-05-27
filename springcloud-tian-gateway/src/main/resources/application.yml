@@ -1,9 +1,23 @@
 server:
   port: 9002
 
+management: #暴露健康检查web接口
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
 spring:
   application:
     name: gateway
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
   cloud:
     gateway:
       discovery:
@@ -15,7 +29,7 @@ spring:
         #enabled: true
       routes:
         - id: userService_rule #路由唯一id
-          uri: lb://springcloud-tian-provider     #转发目标url lb://代表从eureka获取服务
+          uri: lb://springcloud-tian-user     #转发目标url lb://代表从eureka获取服务
           #uri: http://www.baidu.com/
           predicates: #断言 转发user/**下的所有请求
             - Path=/user/**
@@ -28,18 +42,42 @@ spring:
               #name: fallbackcmd
               ### fallback 时调用的方法 http://localhost:9002/fallback
             #fallbackUri: forward:/fallback
-
-management: #暴露健康检查web接口
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: always
 eureka:
   instance:
     prefer-ip-address: true
   client:
     service-url:
       defaultZone: http://eureka7001:7001/eureka/,http://eureka7002:7002/eureka/,http://eureka7003:7003/eureka/
+---
+spring:
+  profiles: pro
+  cloud:
+    gateway:
+      discovery:
+        locator: #是否和服务注册与发现组件结合，设置为 true 后可以直接使用应用名称调用服务
+          enabled: true
+          #lower-case-service-id: true
+        #circuitbreaker: #断路器开关
+        #hystrix:
+        #enabled: true
+      routes:
+        - id: userService_rule #路由唯一id
+          uri: lb://springcloud-tian-user     #转发目标url lb://代表从eureka获取服务
+          #uri: http://www.baidu.com/
+          predicates: #断言 转发user/**下的所有请求
+            - Path=/user/**
+          filters: #过滤器
+            #- RewritePath=/user(?<segment>/?.*), $\{segment}
+            - StripPrefix=1 #截取路径前面一位
+              ## 熔断
+              #- name: Hystrix
+              #args:
+              #name: fallbackcmd
+            ### fallback 时调用的方法 http://localhost:9002/fallback
+            #fallbackUri: forward:/fallback
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://springcloud-tian-eureka:7001/eureka/,http://springcloud-tian-eureka:7002/eureka/,http://springcloud-tian-eureka:7003/eureka/

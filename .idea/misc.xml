@@ -9,6 +9,8 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/springcloud-tian-eureka-server-02/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-tian-eureka-server-03/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud-tian-hystrix-dashboard/pom.xml" />
       </set>
     </option>

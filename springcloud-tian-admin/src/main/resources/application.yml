@@ -11,21 +11,14 @@ spring:
       #boot:
       #admin:
       #notify:
-      #mail:
+    #mail:
     #to:
   security:
     user:
       name: admin
       password: admin
-
-eureka:
-  instance:
-    prefer-ip-address: true
-    health-check-url-path: /actuator/health
-  client:
-    service-url:
-      defaultZone: http://eureka7001:7001/eureka/,http://eureka7002:7002/eureka/,http://eureka7003:7003/eureka/
-
+  profiles:
+    active: dev
 
 management:
   endpoints:
@@ -35,3 +28,23 @@ management:
   endpoint:
     health:
       show-details: always
+---
+spring:
+  profiles: dev
+eureka:
+  instance:
+    prefer-ip-address: true
+    health-check-url-path: /actuator/health
+  client:
+    service-url:
+      defaultZone: http://eureka7001:7001/eureka/,http://eureka7002:7002/eureka/,http://eureka7003:7003/eureka/
+---
+spring:
+  profiles: pro
+eureka:
+  instance:
+    prefer-ip-address: true
+    health-check-url-path: /actuator/health
+  client:
+    service-url:
+      defaultZone: http://springcloud-tian-eureka:7001/eureka/,http://springcloud-tian-eureka:7002/eureka/,http://springcloud-tian-eureka:7003/eureka/

@@ -9,13 +9,11 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>springcloud-tian-api</module>
-        <module>springcloud-tian-provider</module>
+        <module>springcloud-tian-account</module>
         <module>springcloud-tian-consumer</module>
         <module>springcloud-tian-eureka-server</module>
-        <module>springcloud-tian-eureka-server-02</module>
-        <module>springcloud-tian-eureka-server-03</module>
-        <module>springcloud-tian-provider-02</module>
-        <module>springcloud-tian-provider-03</module>
+        <module>springcloud-tian-company</module>
+        <module>springcloud-tian-user</module>
         <module>springcloud-tian-gateway</module>
         <module>springcloud-tian-config</module>
         <module>springcloud-tian-admin</module>

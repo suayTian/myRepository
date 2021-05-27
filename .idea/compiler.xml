@@ -8,19 +8,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="springcloud-tian-consumer" />
+        <module name="springcloud-tian-user" />
         <module name="springcloud-tian-api" />
         <module name="springcloud-tian-config" />
-        <module name="springcloud-tian-provider-03" />
-        <module name="springcloud-tian-provider-02" />
         <module name="springcloud-tian-admin" />
+        <module name="springcloud-tian-company" />
         <module name="springcloud-tian-gateway" />
+        <module name="springcloud-tian-account" />
         <module name="springcloud-tian-eureka-server" />
-        <module name="springcloud-tian-eureka-server-02" />
-        <module name="springcloud-tian-provider" />
-        <module name="springcloud-tian-eureka-server-03" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="springcloud-tian-eureka-server-02" target="8" />
+      <module name="springcloud-tian-eureka-server-03" target="8" />
       <module name="springcloud-tian-hystrix-dashboard" target="8" />
     </bytecodeTargetLevel>
   </component>

@@ -6,7 +6,7 @@ spring:
   profiles: dev
   cloud:
     config:
-      name: consumer-server
+      name: user-server-dev
       #label: master
       uri: http://localhost:9003
       #profile: dev
@@ -17,9 +17,12 @@ spring:
   profiles: pro
   cloud:
     config:
-      name: consumer-server
+      name: user-server-pro
       #label: master
       uri: http://config-server:9003
       #profile: dev
       username: admin
       password: 123456
+      discovery:
+        enabled: true
+        service-id: config-server
