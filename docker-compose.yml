@@ -9,47 +9,85 @@ services:
       - "/home/mysql/data:/var/lib/mysql"
       - "/home/mysql/logs:/var/log/mysql"
     environment:
-      MYSQL_ROOT_PASSWORD=123456
+      MYSQL_ROOT_PASSWORD: 123456
+
   springcloud-tian-eureka:
-    build: .
+    image: springcloud-tian-eureka:1.0 #构建时的镜像名称
+    container_name: springcloud-tian-eureka #运行时的容器名称
+    build:
+      context: .
+      dockerfile: Dockerfile-eureka
+      args:
+      buildno: 1
     ports:
       - "7001:7001"
       - "7002:7002"
       - "7003:7003"
-    args:
-      buildno: 1
+
   springcloud-tian-config:
-    build: .
+    image: springcloud-tian-config:1.0 #构建时的镜像名称
+    container_name: springcloud-tian-config #运行时的容器名称
+    build:
+      context: .
+      dockerfile: Dockerfile-config
     ports:
       - "9003:9003"
+
   springcloud-tian-account:
-    build: .
+    image: springcloud-tian-account:1.0 #构建时的镜像名称
+    container_name: springcloud-tian-account #运行时的容器名称
+    build:
+      context: .
+      dockerfile: Dockerfile-account
     ports:
       - "8003:8003"
     depends_on:
       - springcloud-tian-mysql
+
   springcloud-tian-admin:
-    build: .
+    image: springcloud-tian-admin:1.0 #构建时的镜像名称
+    container_name: springcloud-tian-admin #运行时的容器名称
+    build:
+      context: .
+      dockerfile: Dockerfile-admin
     ports:
       - "9004:9004"
+
   springcloud-tian-company:
-    build: .
+    image: springcloud-tian-company:1.0 #构建时的镜像名称
+    container_name: springcloud-tian-company #运行时的容器名称
+    build:
+      context: .
+      dockerfile: Dockerfile-company
     ports:
       - "8002:8002"
     depends_on:
       - springcloud-tian-mysql
+
   springcloud-tian-consumer:
-    build: .
+    image: springcloud-tian-consumer:1.0 #构建时的镜像名称
+    container_name: springcloud-tian-consumer #运行时的容器名称
+    build:
+      context: .
+      dockerfile: Dockerfile-consumer
     ports:
       - "8080:8080"
     depends_on:
       - springcloud-tian-config
+
   springcloud-tian-gateway:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile-gateway
     ports:
       - "9002:9002"
+
   springcloud-tian-user:
-    build: .
+    image: springcloud-tian-user:1.0 #构建时的镜像名称
+    container_name: springcloud-tian-user #运行时的容器名称
+    build:
+      context: .
+      dockerfile: Dockerfile-user
     ports:
       - "8001:8001"
     depends_on:
