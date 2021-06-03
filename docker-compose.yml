@@ -1,0 +1,57 @@
+version: '3'
+services:
+  springcloud-tian-mysql:
+    image: springcloud-tian-mysql:1.0
+    ports:
+      - "3306:3306"
+    volumes:
+      - "/home/mysql/conf:/etc/mysql/mysql.conf.d"
+      - "/home/mysql/data:/var/lib/mysql"
+      - "/home/mysql/logs:/var/log/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD=123456
+  springcloud-tian-eureka:
+    build: .
+    ports:
+      - "7001:7001"
+      - "7002:7002"
+      - "7003:7003"
+    args:
+      buildno: 1
+  springcloud-tian-config:
+    build: .
+    ports:
+      - "9003:9003"
+  springcloud-tian-account:
+    build: .
+    ports:
+      - "8003:8003"
+    depends_on:
+      - springcloud-tian-mysql
+  springcloud-tian-admin:
+    build: .
+    ports:
+      - "9004:9004"
+  springcloud-tian-company:
+    build: .
+    ports:
+      - "8002:8002"
+    depends_on:
+      - springcloud-tian-mysql
+  springcloud-tian-consumer:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - springcloud-tian-config
+  springcloud-tian-gateway:
+    build: .
+    ports:
+      - "9002:9002"
+  springcloud-tian-user:
+    build: .
+    ports:
+      - "8001:8001"
+    depends_on:
+      - springcloud-tian-config
+      - springcloud-tian-mysql
