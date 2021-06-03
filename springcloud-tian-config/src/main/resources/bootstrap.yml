@@ -25,10 +25,9 @@ spring:
       server:
         git:
           #uri: https://github.com/suayTian/springcloud-tian-config.git
-          uri: usr/lib/springcloud-tian-config
+          uri: file:///springcloud-tian-config
           repos:  #多仓库配置
             local:
-              pattern: config* #如果匹配到配置文件名称 就从本地仓库加载配置文件
-              #uri: file:///E://projects//springcloud-tian-config
-              uri: usr/lib/springcloud-tian-config
+              pattern: config* #如果匹配到配置文件名称 就从本地仓库加载配置文件\
+              uri: file:///springcloud-tian-config
         bootstrap: true #指示配置服务器应该使用来自远程存储库的属性初始化自己的环境
