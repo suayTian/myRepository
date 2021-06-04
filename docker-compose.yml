@@ -76,6 +76,8 @@ services:
       - springcloud-tian-config
 
   springcloud-tian-gateway:
+    image: springcloud-tian-gateway:1.0 #构建时的镜像名称
+    container_name: springcloud-tian-gateway #运行时的容器名称
     build:
       context: .
       dockerfile: Dockerfile-gateway
